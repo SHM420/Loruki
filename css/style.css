@@ -1,0 +1,468 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+
+/* Ovako pravimo globalne */
+:root{
+    --primary-color: #047aed;
+}
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+/* HOME */
+body{
+    font-family: 'Lato', sans-serif;
+    color: #333;
+    line-height: 1.6;
+}
+
+ul{
+    list-style-type: none;
+}
+
+a{
+    text-decoration: none;
+    color: #333;
+}
+
+h1,h2{
+    font-weight: 300;
+    line-height: 1.2;
+    margin: 10px 0;
+}
+
+p{
+    margin: 10px 0;
+}
+
+img{
+    width: 100%;
+}
+
+/* Navbar */
+.navbar{
+    background-color: var(--primary-color);
+    color: #fff;
+    height: 70px;
+}
+
+.navbar ul{
+    display: flex; /* da linkovi budu u red ne u kolone */
+}
+
+.navbar a{
+    color: #fff;
+    padding: 10px;
+    margin: 0 5px;
+}
+
+.navbar a:hover{
+    border-bottom: 2px #fff solid;
+}
+
+.navbar .flex{
+    justify-content: space-between; /* samo u navbar da bude space-between, dole je stavljeno da bude center */
+}
+
+/* Showcase */
+.showcase{
+    height: 400px;
+    background-color: var(--primary-color);
+    color: #fff;
+    position: relative;
+}
+
+.showcase h1{
+    font-size: 40px;
+}
+
+.showcase p{
+    margin: 20px 0;
+}
+
+.showcase .grid{
+    overflow: visible; /* da bi se kartica videla */
+    grid-template-columns: 55% 44%;
+    gap: 30px;
+}
+
+.showcase-text{
+    animation: slideInFromLeft 1s ease-in;
+}
+
+.showcase-form{
+    position: relative;
+    top: 60px;
+    height: 350px;
+    width: 400px;
+    padding: 40px;
+    z-index: 100;
+    justify-self: flex-end; /* gurne karticu skroz do kraj */
+    animation: slideInFromRight 1s ease-in;
+}
+
+.showcase-form .form-control{
+    margin: 30px 0;
+}
+
+.showcase-form input[type='text'],
+.showcase-form input[type='email']{
+    border: 0;
+    border-bottom: 1px solid #b4becb;
+    width: 100%;
+    padding: 3px;
+    font-size: 16px;
+}
+
+.showcase-form input:focus{ /* da se ne bi pojavio border kad ocemo da unesemo ime ili tako nesto */
+    outline: none;
+}
+
+.showcase::before, /* ovako pravimo da bude isecena pozadina */
+.showcase::after{
+    content:'';
+    position: absolute;
+    height: 100px;
+    bottom: -70px;
+    right: 0;
+    left: 0;
+    background: #fff;
+    transform: skewY(-2deg);
+    -webkit-transform: skewY(-2deg); /* za chorme i safari */
+    -moz-transform: skewY(-2deg); /* za mozilu*/
+    -ms-transform: skewY(-2deg); /* za microsoft */
+}
+
+/* Stats */
+.stats{
+    padding-top: 100px;
+}
+
+.stats .grid h3{
+    font-size: 35px;
+}
+
+.stats .grid p{
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+/* Cli */
+.cli .grid{
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+}
+
+.cli .grid > *:first-child{ /* ovako manipulisemo s prvi element */
+    grid-column: 1 / span 2;
+    grid-row: 1/ span 2;
+}
+
+/* Cloud */
+.cloud{
+    background: var(--primary-color);
+    color: #fff;
+}
+
+.cloud .grid{
+    grid-template-columns: 4fr 3fr;
+    gap: 30px;
+}
+
+.cloud-content{
+    text-align: center;
+}
+
+.cloud-content h2{
+    font-size: 3rem;
+    margin: 10px 0px;
+}
+
+.cloud-content p{
+    font-size: 20px;
+    margin: 16px 0px;
+}
+
+/* Languages */
+.languages h1{
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.languages .flex{
+    flex-wrap: wrap;
+}
+
+.languages .card{
+   text-align: center;
+   margin: 18px 10px 40px;
+   transition: 0.5s;
+}
+
+.languages .card:hover{
+    transform: translateY(-15px);
+}
+
+.languages .card p{
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* Footer */
+.footer{
+    background-color: #002240;
+    color: #fff;
+}
+
+.footer li a{
+    color: #fff;
+}
+
+.footer .social a{
+    margin: 0 10px;
+    color: #fff;
+}
+
+
+/* FEATURES */
+
+/* Head */
+.features-head{
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+.features-head .grid h1{
+    font-size: 4rem;
+}
+
+.features-head .grid img{
+    width: 200px;
+    justify-self: flex-end;
+}
+
+/* Sub-Head */
+.sub-head{
+    background-color: rgb(235, 235, 235);
+}
+
+.sub-head h1{
+    font-size: 2rem;
+}
+
+.sub-head img{
+    width: 300px;
+    justify-self: flex-end;
+}
+
+/* Main */
+.main .card > i{
+    margin-right: 20px;
+}
+
+.main .grid{
+    padding: 30px;
+}
+
+.main .grid > *:first-child{
+    grid-column: 1 / span 3;
+}
+
+.main .grid > *:nth-child(2){
+    grid-column: 1 / span 2;
+}
+
+
+/* DOCS */
+
+/* Docs-Head */
+.docs-head{
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+.docs-head .grid h1{
+    font-size: 4rem;
+}
+
+.docs-head .grid img{
+    width: 200px;
+    justify-self: flex-end;
+}
+
+/* Docs-Body */
+.docs-body .grid{
+    grid-template-columns: 1fr 2fr;
+    align-items: flex-start;
+}
+
+.docs-body .card1{
+    background-color: rgb(235, 235, 235);
+}
+
+.docs-body .card1 nav ul li{
+    border-bottom: 1px solid rgb(190, 189, 189);
+    font-size: 17px;
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+}
+
+.docs-body .card1 nav ul li a:hover{
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.docs-body .card .alert{
+    background-color: #5cb85c;
+    color: #fff;
+    font-weight: 900;
+    padding: 10px;
+}
+
+.docs-body .card pre{
+    background-color: #333333;
+    color: #fff;
+    padding: 10px;
+}
+
+.docs-body .card pre code{
+    margin-left: 10px;
+}
+
+/* Tablets and under */
+@media (max-width: 768px){
+    .grid,
+    .showcase .grid,
+    .stats .grid,
+    .cli .grid,
+    .cloud .grid,
+    .docs-body .grid,
+    .main .grid{
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+    }
+
+    .showcase{
+        height: auto;
+    }
+
+    .showcase-text{
+        text-align: center;
+        margin-top: 40px;
+    }
+
+    .showcase-form{
+        justify-self: center;
+        margin: auto;
+    }
+
+    .cloud img{
+        height: 350px;
+        width: 620px;
+        justify-self: center;
+    }
+
+    .footer .social{
+        justify-self: end;
+    }
+
+    .footer .social a{
+        margin: 0 5px;
+    }
+
+    .footer nav{
+        justify-self: center;
+    }
+}
+
+/* Animations */
+@keyframes slideInFromLeft{
+    0%{
+        transform: translateX(-100%);
+    }
+
+    100%{
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInFromRight{
+    0%{
+        transform: translateX(100%);
+    }
+
+    100%{
+        transform: translateX(0);
+    }
+}
+
+/* Mobile */
+@media (max-width: 500px){
+    .navbar{
+        height: 110px;
+    }
+
+    .navbar .flex{
+        flex-direction: column;
+        overflow: hidden;
+    }
+
+    .navbar ul{
+        padding: 10px;
+        background-color: rgba(0,0,0,0.1);
+    }
+
+    .cli .card h3{
+        font-size: 15px;
+    }
+
+    .cloud h2{
+        font-size: 35px;
+    }
+
+    .cloud p{
+        font-size: 16px;
+    }
+
+    .cloud img{
+        height: 220px;
+        width: 330px;
+        justify-self: center;
+    }
+
+    /* FEATURES / DOCS */
+    .features-head .grid,
+    .sub-head .grid,
+    .docs-head .grid{
+        grid-template-columns: 1fr;
+    }
+
+    .features-head .head-content,
+    .sub-head .sub-content,
+    .docs-head .head-content{
+        text-align: center;
+    }
+
+    .features-head .grid img,
+    .sub-head .grid img,
+    .docs-head .grid img{
+        justify-self: center;
+    }
+
+    .main .grid{
+        gap: 10px;
+    }
+
+    .main .grid .card{
+        margin: 0;
+    }
+
+    .main .grid > *:first-child{
+        grid-column: 1 / span 2;
+    }
+}
